@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLLibrary" Class="DataDiagramDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-UP1KGON;Initial Catalog=QLLibrary;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QLLibraryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChiTietPhieuMuon" Member="ChiTietPhieuMuons">
+    <Type Name="ChiTietPhieuMuon">
+      <Column Name="MaPM" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="HanMuon" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayTra" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TienPhat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ChiTietSach_ChiTietPhieuMuon" Member="ChiTietSach" ThisKey="MaSach" OtherKey="MaSach" Type="ChiTietSach" IsForeignKey="true" />
+      <Association Name="PhieuMuonSach_ChiTietPhieuMuon" Member="PhieuMuonSach" ThisKey="MaPM" OtherKey="MaPM" Type="PhieuMuonSach" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietSach" Member="ChiTietSaches">
+    <Type Name="ChiTietSach">
+      <Column Name="MaSach" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TacGia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TheLoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NXB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgonNgu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LinhVuc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NamXB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaVT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="ChiTietSach_ChiTietPhieuMuon" Member="ChiTietPhieuMuons" ThisKey="MaSach" OtherKey="MaSach" Type="ChiTietPhieuMuon" />
+      <Association Name="ViTriSach_ChiTietSach" Member="ViTriSach" ThisKey="MaVT" OtherKey="MaVT" Type="ViTriSach" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhanVien" Member="NhanViens">
+    <Type Name="NhanVien">
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Association Name="NhanVien_PhieuMuonSach" Member="PhieuMuonSaches" ThisKey="MaNV" OtherKey="MaNV" Type="PhieuMuonSach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuMuonSach" Member="PhieuMuonSaches">
+    <Type Name="PhieuMuonSach">
+      <Column Name="MaPM" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MaSV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TimeCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PhieuMuonSach_ChiTietPhieuMuon" Member="ChiTietPhieuMuons" ThisKey="MaPM" OtherKey="MaPM" Type="ChiTietPhieuMuon" />
+      <Association Name="NhanVien_PhieuMuonSach" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+      <Association Name="SinhVien_PhieuMuonSach" Member="SinhVien" ThisKey="MaSV" OtherKey="MaSV" Type="SinhVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SinhVien" Member="SinhViens">
+    <Type Name="SinhVien">
+      <Column Name="MaSV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoDT" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="Lop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="SinhVien_PhieuMuonSach" Member="PhieuMuonSaches" ThisKey="MaSV" OtherKey="MaSV" Type="PhieuMuonSach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViTriSach" Member="ViTriSaches">
+    <Type Name="ViTriSach">
+      <Column Name="MaVT" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ViTri" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TenKe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ViTriSach_ChiTietSach" Member="ChiTietSaches" ThisKey="MaVT" OtherKey="MaVT" Type="ChiTietSach" />
+    </Type>
+  </Table>
+</Database>

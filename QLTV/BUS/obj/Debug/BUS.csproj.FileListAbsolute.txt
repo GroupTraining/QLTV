@@ -1,0 +1,7 @@
+C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\BUS\bin\Debug\BUS.dll
+C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\BUS\bin\Debug\BUS.pdb
+C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\BUS\bin\Debug\DAL.dll
+C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\BUS\bin\Debug\DAL.pdb
+C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\BUS\obj\Debug\BUS.dll
+C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\BUS\obj\Debug\BUS.pdb
