@@ -31,5 +31,12 @@ namespace QLTV.GUI
             mainchinh.Show();
 
         }
+
+        private void buttonsrngmuon_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.TimKiemNguoiMuon tkngmuon = new GUI.TimKiemNguoiMuon();
+            tkngmuon.Show();
+        }
     }
 }

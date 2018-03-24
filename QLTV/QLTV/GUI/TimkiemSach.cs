@@ -34,5 +34,12 @@ namespace QLTV.GUI
             dataGridViewSach.DataSource = bus.get_sach();
             dataGridViewSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.TracuuChoose tracuu = new GUI.TracuuChoose();
+            tracuu.Show();
+        }
     }
 }

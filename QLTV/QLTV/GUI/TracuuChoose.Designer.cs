@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.buttonsrngmuon = new DevComponents.DotNetBar.ButtonX();
-            this.buttonsrsach = new DevComponents.DotNetBar.ButtonX();
             this.buttonBack = new DevComponents.DotNetBar.ButtonX();
+            this.buttonsrsach = new DevComponents.DotNetBar.ButtonX();
+            this.buttonsrngmuon = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,16 +53,17 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             // 
-            // buttonsrngmuon
+            // buttonBack
             // 
-            this.buttonsrngmuon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonsrngmuon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonsrngmuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonsrngmuon.Location = new System.Drawing.Point(88, 75);
-            this.buttonsrngmuon.Name = "buttonsrngmuon";
-            this.buttonsrngmuon.Size = new System.Drawing.Size(263, 47);
-            this.buttonsrngmuon.TabIndex = 0;
-            this.buttonsrngmuon.Text = "Tra cứu Người Mượn";
+            this.buttonBack.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonBack.Location = new System.Drawing.Point(454, 10);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(99, 34);
+            this.buttonBack.TabIndex = 2;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonsrsach
             // 
@@ -76,17 +77,17 @@
             this.buttonsrsach.Text = "Tra cứu Sách";
             this.buttonsrsach.Click += new System.EventHandler(this.buttonsrsach_Click);
             // 
-            // buttonBack
+            // buttonsrngmuon
             // 
-            this.buttonBack.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonBack.Location = new System.Drawing.Point(454, 10);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(99, 34);
-            this.buttonBack.TabIndex = 2;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.buttonsrngmuon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonsrngmuon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonsrngmuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonsrngmuon.Location = new System.Drawing.Point(88, 75);
+            this.buttonsrngmuon.Name = "buttonsrngmuon";
+            this.buttonsrngmuon.Size = new System.Drawing.Size(263, 47);
+            this.buttonsrngmuon.TabIndex = 0;
+            this.buttonsrngmuon.Text = "Tra cứu Người Mượn";
+            this.buttonsrngmuon.Click += new System.EventHandler(this.buttonsrngmuon_Click);
             // 
             // TracuuChoose
             // 
