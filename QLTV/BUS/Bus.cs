@@ -106,5 +106,45 @@ namespace BUS
                        select timkiemNguoimuon;
             return ngmuon;
         }
+
+        //Lấy thông tin nhân viên
+        public object get_infoPersonal()
+        {
+            var nv = from nvs in data.NhanViens
+                     select nvs;
+            return nv;
+        }
+        //Cập nhật thông tin nhân viên
+        public int EditNhanVien(string ma,string hoten,bool gt, DateTime ns, string sdt)
+        {
+            var nv = data.NhanViens.Single(p => p.MaNV == ma);
+            nv.TenNV = hoten;
+            if(gt == true)
+            {
+                nv.GioiTinh = true;
+            }
+            else
+            {
+                nv.GioiTinh = false;
+            }
+            nv.NgaySinh = ns;
+            nv.DienThoai = sdt;
+            data.SubmitChanges();
+            return 1;
+        }
+        //Xóa nhân viên
+        public int DelNhanVien(string ma)
+        {
+            var nv = data.NhanViens.Single(p => p.MaNV == ma);
+
+           var pm = (from p in data.PhieuMuonSaches where p.MaNV == ma select p);
+            foreach(var p in pm)
+            {
+                p.MaNV = null;
+            }
+            data.NhanViens.DeleteOnSubmit(nv);
+            data.SubmitChanges();
+            return 1;
+        }
     }
 }
