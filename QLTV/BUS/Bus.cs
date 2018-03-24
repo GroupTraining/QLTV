@@ -56,5 +56,55 @@ namespace BUS
                        select timkiemSach;
             return sach;
         }
+        
+        public object get_ngmuon()
+        {
+            var ngmuon = from u in data.ChiTietPhieuMuons
+                         from z in data.PhieuMuonSaches
+                         from v in data.SinhViens
+                         from t in data.ChiTietSaches
+                         where u.MaPM == z.MaPM
+                         where z.MaSV == v.MaSV
+                         where u.MaSach == t.MaSach
+                         select new
+                         {
+                             MaSV = v.MaSV,
+                             SoDT = v.SoDT,
+                             Lop = v.Lop,
+                             TenSach = t.TenSach,
+                             NgayMuon = u.NgayMuon,
+                             HanMuon = u.HanMuon,
+                             NgayTra = u.NgayTra,
+                             TienPhat = u.TienPhat,
+                         }; ;
+            return ngmuon;
+        }
+        public object get_ngmuon(string giatri)
+        {
+            var ngmuon = from u in data.ChiTietPhieuMuons
+                         from z in data.PhieuMuonSaches
+                         from v in data.SinhViens
+                         from t in data.ChiTietSaches
+                         where u.MaPM == z.MaPM
+                         where z.MaSV == v.MaSV
+                         where u.MaSach == t.MaSach
+                         select new
+                         {
+                             MaSV = v.MaSV,
+                             TenSV = v.TenSV,
+                             SoDT = v.SoDT,
+                             Lop = v.Lop,
+                             TenSach = t.TenSach,
+                             NgayMuon = u.NgayMuon,
+                             HanMuon = u.HanMuon,
+                             NgayTra = u.NgayTra,
+                             TienPhat = u.TienPhat,
+                         } into timkiemNguoimuon
+                       where timkiemNguoimuon.MaSV.Contains(giatri)
+                       || timkiemNguoimuon.TenSV.Contains(giatri)
+                       || timkiemNguoimuon.SoDT.Contains(giatri)
+                       select timkiemNguoimuon;
+            return ngmuon;
+        }
     }
 }

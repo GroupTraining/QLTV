@@ -1,6 +1,6 @@
 ﻿namespace QLTV.GUI
 {
-    partial class TimkiemSach
+    partial class TimKiemNguoiMuon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.buttonBack = new DevComponents.DotNetBar.ButtonX();
+            this.buttonRefresh = new DevComponents.DotNetBar.ButtonX();
             this.buttonSearch = new DevComponents.DotNetBar.ButtonX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.textGiatri = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dataGridViewSach = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.buttonHome = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.dataGridViewNgmuon = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNgmuon)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
             // 
-            this.groupPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.buttonHome);
             this.groupPanel1.Controls.Add(this.buttonBack);
+            this.groupPanel1.Controls.Add(this.buttonRefresh);
             this.groupPanel1.Controls.Add(this.buttonSearch);
-            this.groupPanel1.Controls.Add(this.labelX1);
             this.groupPanel1.Controls.Add(this.textGiatri);
-            this.groupPanel1.Location = new System.Drawing.Point(0, 1);
+            this.groupPanel1.Controls.Add(this.labelX1);
+            this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(858, 165);
+            this.groupPanel1.Size = new System.Drawing.Size(855, 118);
             // 
             // 
             // 
@@ -74,40 +73,43 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
-            this.groupPanel1.Text = "Tra cứu Sách";
+            this.groupPanel1.Text = "Tra cứu Người mượn";
             // 
             // buttonBack
             // 
             this.buttonBack.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonBack.Location = new System.Drawing.Point(671, 29);
+            this.buttonBack.Location = new System.Drawing.Point(697, 26);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
-            this.buttonBack.TabIndex = 9;
-            this.buttonBack.Text = "Refresh";
+            this.buttonBack.Size = new System.Drawing.Size(92, 26);
+            this.buttonBack.TabIndex = 4;
+            this.buttonBack.Text = "Back";
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonRefresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonRefresh.Location = new System.Drawing.Point(595, 26);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(86, 26);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // buttonSearch
             // 
             this.buttonSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonSearch.Location = new System.Drawing.Point(569, 29);
+            this.buttonSearch.Location = new System.Drawing.Point(471, 26);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 8;
+            this.buttonSearch.Size = new System.Drawing.Size(102, 25);
+            this.buttonSearch.TabIndex = 2;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // labelX1
-            // 
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX1.Location = new System.Drawing.Point(22, 25);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(191, 31);
-            this.labelX1.TabIndex = 7;
-            this.labelX1.Text = "Nhập thông tin tìm kiếm";
             // 
             // textGiatri
             // 
@@ -116,51 +118,48 @@
             // 
             this.textGiatri.Border.Class = "TextBoxBorder";
             this.textGiatri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textGiatri.Location = new System.Drawing.Point(219, 27);
+            this.textGiatri.Location = new System.Drawing.Point(190, 26);
             this.textGiatri.Name = "textGiatri";
-            this.textGiatri.Size = new System.Drawing.Size(262, 26);
-            this.textGiatri.TabIndex = 6;
+            this.textGiatri.Size = new System.Drawing.Size(216, 26);
+            this.textGiatri.TabIndex = 1;
             // 
-            // dataGridViewSach
+            // labelX1
             // 
-            this.dataGridViewSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSach.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewSach.Location = new System.Drawing.Point(1, 110);
-            this.dataGridViewSach.Name = "dataGridViewSach";
-            this.dataGridViewSach.Size = new System.Drawing.Size(857, 214);
-            this.dataGridViewSach.TabIndex = 1;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelX1.Location = new System.Drawing.Point(9, 26);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(158, 25);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Nhập thông tin Người mượn";
             // 
-            // buttonHome
+            // dataGridViewNgmuon
             // 
-            this.buttonHome.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonHome.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonHome.Location = new System.Drawing.Point(764, 30);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(72, 21);
-            this.buttonHome.TabIndex = 10;
-            this.buttonHome.Text = "Back";
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            this.dataGridViewNgmuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewNgmuon.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewNgmuon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridViewNgmuon.Location = new System.Drawing.Point(2, 114);
+            this.dataGridViewNgmuon.Name = "dataGridViewNgmuon";
+            this.dataGridViewNgmuon.Size = new System.Drawing.Size(852, 210);
+            this.dataGridViewNgmuon.TabIndex = 1;
             // 
-            // TimkiemSach
+            // TimKiemNguoiMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 325);
-            this.Controls.Add(this.dataGridViewSach);
+            this.Controls.Add(this.dataGridViewNgmuon);
             this.Controls.Add(this.groupPanel1);
-            this.Name = "TimkiemSach";
-            this.Text = "Tra cứu Sách";
+            this.Name = "TimKiemNguoiMuon";
+            this.Text = "TimKiemNguoiMuon";
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNgmuon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,11 +167,11 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textGiatri;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewSach;
         private DevComponents.DotNetBar.ButtonX buttonSearch;
+        private DevComponents.DotNetBar.Controls.TextBoxX textGiatri;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX buttonBack;
-        private DevComponents.DotNetBar.ButtonX buttonHome;
+        private DevComponents.DotNetBar.ButtonX buttonRefresh;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewNgmuon;
     }
 }
