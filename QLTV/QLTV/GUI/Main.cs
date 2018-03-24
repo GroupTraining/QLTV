@@ -17,5 +17,11 @@ namespace QLTV.GUI
             InitializeComponent();
         }
 
+        private void buttonTracuu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.TracuuChoose tracuu = new GUI.TracuuChoose();
+            tracuu.Show();
+        }
     }
 }

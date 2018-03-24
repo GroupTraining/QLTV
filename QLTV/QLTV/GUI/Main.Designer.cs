@@ -30,7 +30,7 @@
         {
             this.contextMenuBar1 = new DevComponents.DotNetBar.ContextMenuBar();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonTracuu = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenuBar1)).BeginInit();
@@ -58,16 +58,17 @@
             this.buttonX2.TabIndex = 1;
             this.buttonX2.Text = "Thêm mới";
             // 
-            // buttonX3
+            // buttonTracuu
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonX3.Location = new System.Drawing.Point(84, 0);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(75, 23);
-            this.buttonX3.TabIndex = 2;
-            this.buttonX3.Text = "Tra cứu";
+            this.buttonTracuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonTracuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonTracuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonTracuu.Location = new System.Drawing.Point(84, 0);
+            this.buttonTracuu.Name = "buttonTracuu";
+            this.buttonTracuu.Size = new System.Drawing.Size(75, 23);
+            this.buttonTracuu.TabIndex = 2;
+            this.buttonTracuu.Text = "Tra cứu";
+            this.buttonTracuu.Click += new System.EventHandler(this.buttonTracuu_Click);
             // 
             // buttonX1
             // 
@@ -99,7 +100,7 @@
             this.Controls.Add(this.buttonX4);
             this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.buttonX2);
-            this.Controls.Add(this.buttonX3);
+            this.Controls.Add(this.buttonTracuu);
             this.Controls.Add(this.contextMenuBar1);
             this.Name = "Main";
             this.Text = "Main";
@@ -112,7 +113,7 @@
 
         private DevComponents.DotNetBar.ContextMenuBar contextMenuBar1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX buttonTracuu;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX4;
     }
