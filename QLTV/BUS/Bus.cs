@@ -183,6 +183,81 @@ namespace BUS
             data.SubmitChanges();
             return 1;
         }
+        public object ThongKeSachTheoLinhVuc(string text)
+        {
+            var lv = from u in data.ChiTietSaches
+                     from v in data.ViTriSaches
+                     where u.LinhVuc == text
+                     where u.MaVT == v.MaVT
+                     select new
+                     {
+                         Ma = u.MaSach,
+                         TenSach = u.TenSach,
+                         TacGia = u.TacGia,
+                         LinhVuc = u.LinhVuc,
+                         ViTri = v.ViTri
+                     };
+            return lv;
+        }
+        public object ThongKeSachTheoTheLoai(string text)
+        {
+            var tl = from u in data.ChiTietSaches
+                     from v in data.ViTriSaches
+                     where u.TheLoai == text
+                     where u.MaVT == v.MaVT
+                     select new
+                     {
+                         Ma = u.MaSach,
+                         TenSach = u.TenSach,
+                         TacGia = u.TacGia,
+                         TheLoai = u.TheLoai,
+                         ViTri = v.ViTri
+                     };
+            return tl;
+        }
+        public object ThongKePhieuChuaTra()
+        {
+            var ngay = from a in data.ChiTietPhieuMuons
+                       select Convert.ToString(a.NgayTra);
+            var ph = from a in data.ChiTietPhieuMuons
+                     from b in data.PhieuMuonSaches
+                     from c in data.SinhViens
+                     from d in data.ChiTietSaches
+                     where a.MaPM == b.MaPM
+                     where b.MaSV == c.MaSV
+                     where a.MaSach == d.MaSach
+                     where a.NgayTra == null
+                     select new
+                     {
+                         TenSV = c.TenSV,
+                         MaSach = a.MaSach,
+                         TenSach = d.TenSach,
+                         NgayMuon = a.NgayMuon,
+                         HanMuon = a.HanMuon
+                     };
+            return ph;
+        }
+        public object ThongKePhieuDaTra()
+        {
+            var ph = from a in data.ChiTietPhieuMuons
+                     from b in data.PhieuMuonSaches
+                     from c in data.SinhViens
+                     from d in data.ChiTietSaches
+                     where a.MaPM == b.MaPM
+                     where b.MaSV == c.MaSV
+                     where a.MaSach == d.MaSach
+                     where a.NgayTra != null
+                     select new
+                     {
+                         TenSV = c.TenSV,
+                         MaSach = a.MaSach,
+                         TenSach = d.TenSach,
+                         NgayMuon = a.NgayMuon,
+                         NgayTra = a.NgayTra,
+                         TienPhat = a.TienPhat
+                     };
+            return ph;
+        }
 
     }
 }
