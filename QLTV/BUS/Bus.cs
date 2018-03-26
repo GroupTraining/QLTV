@@ -69,6 +69,7 @@ namespace BUS
                          select new
                          {
                              MaSV = v.MaSV,
+                             TenSV = v.TenSV,
                              SoDT = v.SoDT,
                              Lop = v.Lop,
                              TenSach = t.TenSach,

@@ -80,6 +80,7 @@
             this.buttonX1.Size = new System.Drawing.Size(72, 23);
             this.buttonX1.TabIndex = 0;
             this.buttonX1.Text = "Thống kê";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // buttonX4
             // 
