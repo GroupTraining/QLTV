@@ -146,5 +146,43 @@ namespace BUS
             data.SubmitChanges();
             return 1;
         }
+
+        //Lấy thông tin chi tiết phiếu mượn
+        public object get_CTThongTinPM()
+        {
+            var ctpm = from ctmps in data.ChiTietPhieuMuons
+                       select new
+                       {
+                           ID_PM = ctmps.MaPM,
+                           ID_MS = ctmps.MaSach,
+                           Ngay_muon = ctmps.NgayMuon,
+                           Han_Muon = ctmps.HanMuon,
+                           Ngay_tra = ctmps.NgayTra,
+                           Tien_Phat = ctmps.TienPhat
+                       };
+
+            return ctpm;
+        }
+        //Chỉnh sửa thông tin chi tiết phiếu mượn
+        public int Update_TTPM(string mapm,string ngaymuon,string hanmuon,string ngaytra,string tienphat)
+        {
+            var CTPM = data.ChiTietPhieuMuons.Single(p => p.MaPM == mapm);
+            CTPM.NgayMuon = Convert.ToDateTime(ngaymuon);
+            CTPM.HanMuon = Convert.ToDateTime(hanmuon);
+            CTPM.NgayTra = Convert.ToDateTime(ngaytra);
+            CTPM.TienPhat = Convert.ToInt32(tienphat);
+            data.SubmitChanges();
+            return 1;
+        }
+        public int del_TTPM(string mapm)
+        {
+            var CTPM = data.ChiTietPhieuMuons.Single(p => p.MaPM == mapm);
+            var PM = data.PhieuMuonSaches.Single(p => p.MaPM == mapm);
+            data.PhieuMuonSaches.DeleteOnSubmit(PM);
+            data.ChiTietPhieuMuons.DeleteOnSubmit(CTPM);
+            data.SubmitChanges();
+            return 1;
+        }
+
     }
 }
