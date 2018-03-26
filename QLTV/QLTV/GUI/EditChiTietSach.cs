@@ -89,7 +89,7 @@ namespace QLTV.GUI
             txtNgonNgu.Text = dgvChiTietSach.Rows[rowindex].Cells[5].Value.ToString();
             txtLinhVuc.Text = dgvChiTietSach.Rows[rowindex].Cells[6].Value.ToString();
             txtNamXB.Text = dgvChiTietSach.Rows[rowindex].Cells[7].Value.ToString();
-            txtMaVT.Text = dgvChiTietSach.Rows[rowindex].Cells[7].Value.ToString();
+            txtMaVT.Text = dgvChiTietSach.Rows[rowindex].Cells[8].Value.ToString();
 
         }
     }
