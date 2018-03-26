@@ -77,6 +77,19 @@ namespace QLTV.GUI
 
         private void dgvChiTietSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtMaSach.Enabled = false;
+            txtMaVT.Enabled = false;
+            int rowindex = dgvChiTietSach.CurrentCell.RowIndex;
+            int columnindex = dgvChiTietSach.CurrentCell.ColumnIndex;
+            txtMaSach.Text = dgvChiTietSach.Rows[rowindex].Cells[0].Value.ToString();
+            txtTenSach.Text = dgvChiTietSach.Rows[rowindex].Cells[1].Value.ToString();
+            txtTacGia.Text = dgvChiTietSach.Rows[rowindex].Cells[2].Value.ToString();
+            txtTheLoai.Text = dgvChiTietSach.Rows[rowindex].Cells[3].Value.ToString();
+            txtNhaXB.Text = dgvChiTietSach.Rows[rowindex].Cells[4].Value.ToString();
+            txtNgonNgu.Text = dgvChiTietSach.Rows[rowindex].Cells[5].Value.ToString();
+            txtLinhVuc.Text = dgvChiTietSach.Rows[rowindex].Cells[6].Value.ToString();
+            txtNamXB.Text = dgvChiTietSach.Rows[rowindex].Cells[7].Value.ToString();
+            txtMaVT.Text = dgvChiTietSach.Rows[rowindex].Cells[7].Value.ToString();
 
         }
     }
