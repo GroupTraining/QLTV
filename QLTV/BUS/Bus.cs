@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using System.Globalization;
 
 namespace BUS
 {
@@ -56,7 +57,46 @@ namespace BUS
                        select timkiemSach;
             return sach;
         }
-        
+        public object get_sach1()
+        {
+            var sach = from u in data.ChiTietSaches
+
+                       select new
+                       {
+                           MaSach = u.MaSach,
+                           TenSach = u.TenSach,
+                           TacGia = u.TacGia,
+                           TheLoai = u.TheLoai,
+                           NXB = u.NXB,
+                           NgonNgu = u.NgonNgu,
+                           LinhVuc = u.LinhVuc,
+                           NamXB = u.NamXB,
+                           ViTri = u.MaVT,
+                       }; ;
+            return sach;
+        }
+        public object addChiTietSach(string ms, string ts, string tg, string tl, string nxb, string nn, string lv, int namxb, string vitri)
+        {
+            ChiTietSach chitietsach = new ChiTietSach();
+            //ViTriSach vt = data.ViTriSaches.Single(a => a.MaVT == vitri);
+            chitietsach.MaSach = ms;
+            chitietsach.TenSach = ts;
+            chitietsach.TacGia = tg;
+            chitietsach.TheLoai = tl;
+            chitietsach.NXB = nxb;
+            chitietsach.NgonNgu = nn;
+            chitietsach.LinhVuc = lv;
+            chitietsach.NamXB = namxb;
+            chitietsach.MaVT = vitri;
+            /*if(vt!= null)
+            {
+                chitietsach.MaVT = vitri;
+            }*/
+            data.ChiTietSaches.InsertOnSubmit(chitietsach);
+            data.SubmitChanges();
+
+            return 1;
+        }
         public object get_ngmuon()
         {
             var ngmuon = from u in data.ChiTietPhieuMuons
@@ -114,6 +154,39 @@ namespace BUS
             var nv = from nvs in data.NhanViens
                      select nvs;
             return nv;
+        }
+        public object get_nhanvien()
+        {
+            var nv = from a in data.NhanViens
+                     select new
+                     {
+                         MaNV = a.MaNV,
+                         TenNV = a.TenNV,
+                         GioiTinh = a.GioiTinh,
+                         NgaySinh = a.NgaySinh,
+                         DienThoai = a.DienThoai
+                     }; ;
+            return nv;
+        }
+        public object addNhanVien(string ma, string hoten, string gt, string ns, string sdt)
+        {
+            NhanVien nv = new NhanVien();
+            nv.MaNV = ma;
+            nv.TenNV = hoten;
+            if (gt == "Nam")
+            {
+                nv.GioiTinh = false;
+            }
+            if (gt == "Nữ")
+            {
+                nv.GioiTinh = true;
+            }
+            nv.NgaySinh = DateTime.Parse(ns, new CultureInfo("en-US", true));
+            nv.DienThoai = sdt;
+
+            data.NhanViens.InsertOnSubmit(nv);
+            data.SubmitChanges();
+            return 1;
         }
         //Cập nhật thông tin nhân viên
         public int EditNhanVien(string ma,string hoten,bool gt, DateTime ns, string sdt)
