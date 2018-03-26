@@ -259,6 +259,45 @@ namespace BUS
                      };
             return ph;
         }
+        //lấy thông tin chi tiết sách
+        public object get_ChiTietSach()
+        {
+            var cts = from p in data.ChiTietSaches
+                      select new
+                      {
+                          MaSach = p.MaSach,
+                          TenSach = p.TenSach,
+                          TacGia = p.TacGia,
+                          TheLoai = p.TheLoai,
+                          NXB = p.NXB,
+                          NgonNgu = p.NgonNgu,
+                          LinhVuc = p.LinhVuc,
+                          NamXB = p.NamXB,
+                          MaVT = p.MaVT
+                      };
+
+            return cts;
+        }
+        //chỉnh sửa thông tin chi tiết sách
+        public int Update_CTS(string masach, string tensach, string tacgia, string theloai, string nxb, string ngonngu, string linhvuc, string namxb, string mavt)
+        {
+            var CTS = data.ChiTietSaches.Single(p => p.MaSach == masach);
+            data.SubmitChanges();
+            return 1;
+        }
+
+        public int del_CTS(string masach, string mavt)
+        {
+            var CTS = data.ChiTietSaches.Single(p => p.MaSach == masach);
+            var VTS = data.ViTriSaches.Single(p => p.MaVT == mavt);
+            var CTPM = data.ChiTietPhieuMuons.Single(p => p.MaSach == masach);
+            data.ChiTietSaches.DeleteOnSubmit(CTS);
+            data.ViTriSaches.DeleteOnSubmit(VTS);
+            data.ChiTietPhieuMuons.DeleteOnSubmit(CTPM);
+            data.SubmitChanges();
+            return 1;
+        }
+
 
     }
 }
