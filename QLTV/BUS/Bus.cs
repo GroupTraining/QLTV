@@ -349,7 +349,19 @@ namespace BUS
         public int Update_CTS(string masach, string tensach, string tacgia, string theloai, string nxb, string ngonngu, string linhvuc, string namxb, string mavt)
         {
             var CTS = data.ChiTietSaches.Single(p => p.MaSach == masach);
+            CTS.MaSach = masach;
+            CTS.TenSach = tensach;
+            CTS.TacGia= tacgia;
+            CTS.TheLoai = theloai;
+            CTS.NXB = nxb;
+            CTS.NgonNgu= ngonngu;
+            CTS.LinhVuc = linhvuc;
+            CTS.NamXB = Convert.ToInt32(namxb);
+        
+            CTS.MaVT = mavt;
+
             data.SubmitChanges();
+
             return 1;
         }
 

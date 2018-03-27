@@ -44,7 +44,7 @@ namespace QLTV.GUI
             if (MessageBox.Show("Bạn có muốn sửa  thông tin sinh viên?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
-                bus.EditNhanVien(txtMaSV.Text, txtTenSV.Text, gioitinh, Convert.ToDateTime(dtbBirtday.Text), txtSoDT.Text);
+                bus.EditSinhVien(txtMaSV.Text, txtTenSV.Text, gioitinh, Convert.ToDateTime(dtbBirtday.Text), txtSoDT.Text);
                 MessageBox.Show("Chỉnh sửa thành công!!");
                 txtMaSV.Text = "";
                 txtTenSV.Text = "";
@@ -53,6 +53,7 @@ namespace QLTV.GUI
                 rdb_nu.Checked = false;
                 dtbBirtday.Text = "";
                 dgvSinhVien.Refresh();
+                dgvSinhVien.DataSource = bus.get_SinhVien();
             }
         }
 
@@ -64,6 +65,7 @@ namespace QLTV.GUI
                 bus.DelSinhVien(txtMaSV.Text);
                 MessageBox.Show("Xóa thành công!!");
                 dgvSinhVien.Refresh();
+                dgvSinhVien.DataSource = bus.get_SinhVien();
             }
         }
 

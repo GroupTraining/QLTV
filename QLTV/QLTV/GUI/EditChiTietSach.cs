@@ -58,8 +58,16 @@ namespace QLTV.GUI
 
                bus.Update_CTS(txtMaSach.Text, txtTenSach.Text,txtTacGia.Text,txtTheLoai.Text,txtNhaXB.Text,txtNgonNgu.Text,txtLinhVuc.Text,txtNamXB.Text,txtMaVT.Text);
                 MessageBox.Show("Chỉnh sửa thành công!!");
-               
-    
+                txtMaSach.Text = "";
+                txtTenSach.Text = "";
+                txtTacGia.Text = "";
+                txtTheLoai.Text = "";
+                txtNhaXB.Text = "";
+                txtNgonNgu.Text = "";
+                txtLinhVuc.Text = "";
+                txtNamXB.Text = "";
+                txtMaVT.Text = "";
+                dgvChiTietSach.Refresh();
                 dgvChiTietSach.DataSource = bus.get_ChiTietSach();
             }
         }
@@ -71,6 +79,7 @@ namespace QLTV.GUI
 
                 bus.del_CTS(txtMaSach.Text,txtMaVT.Text);
                 MessageBox.Show("Xóa thành công!!");
+                dgvChiTietSach.Refresh();
                 dgvChiTietSach.DataSource = bus.get_ChiTietSach();
             }
         }
