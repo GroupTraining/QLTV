@@ -10,3 +10,6 @@ C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\QLTV\bin\Debug\BUS.pdb
 C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\QLTV\bin\Debug\DAL.pdb
 C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\QLTV\obj\Debug\QLTV.exe
 C:\Users\User\Documents\GitHub\BTLTTN\QLLibrary\QLTV\QLTV\obj\Debug\QLTV.pdb
+E:\github\QLTV\QLTV\QLTV\bin\Debug\QLTV.exe.config
+E:\github\QLTV\QLTV\QLTV\obj\Debug\QLTV.exe
+E:\github\QLTV\QLTV\QLTV\obj\Debug\QLTV.pdb
