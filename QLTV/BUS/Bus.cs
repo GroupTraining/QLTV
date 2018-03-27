@@ -364,7 +364,50 @@ namespace BUS
             data.SubmitChanges();
             return 1;
         }
+        public object get_SinhVien()
+        {
+            var sv = from a in data.SinhViens
+                     select new
+                     {
+                         MaSV = a.MaSV,
+                         TenSV = a.TenSV,
+                         GioiTinh = a.GioiTinh,
+                         NgaySinh = a.NgaySinh,
+                         SoDT = a.SoDT
+                     }; 
+            return sv;
+        }
 
+        public int EditSinhVien(string masv, string tensv, bool gioitinh, DateTime ngaysinh, string sodt)
+        {
+            var sv = data.SinhViens.Single(p => p.MaSV == masv);
+            sv.TenSV = tensv;
+            if (gioitinh == true)
+            {
+                sv.GioiTinh = true;
+            }
+            else
+            {
+                sv.GioiTinh = false;
+            }
+            sv.NgaySinh = ngaysinh;
+            sv.SoDT = sodt;
+            data.SubmitChanges();
+            return 1;
+        }
+        public int DelSinhVien(string masv)
+        {
+            var sv = data.SinhViens.Single(p => p.MaSV == masv);
+
+            var pm = (from p in data.PhieuMuonSaches where p.MaSV == masv select p);
+            foreach (var p in pm)
+            {
+                p.MaSV = null;
+            }
+            data.SinhViens.DeleteOnSubmit(sv);
+            data.SubmitChanges();
+            return 1;
+        }
 
     }
 }
