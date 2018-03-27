@@ -35,7 +35,7 @@ namespace QLTV.GUI
         {
             try
             {
-                bus.addChiTietSach(txtMaSach1.Text, txtTenSach1.Text, txtTacGia1.Text, txtTheLoai1.Text, txtNXB1.Text, txtNgonNgu1.Text, txtLinhVuc1.Text, Convert.ToInt32(txtNamXB1.Text), txtMaVT1.Text);
+                bus.addChiTietSach(txtMaSach1.Text, txtTenSach1.Text, txtTacGia1.Text, txtTheLoai1.Text, txtNXB1.Text, txtNgonNgu1.Text, txtLinhVuc1.Text, Convert.ToInt32(txtNamXB1.Text));
                 dataGridViewX2.Refresh();
                 dataGridViewX2.DataSource = bus.get_sach1();
                 MessageBox.Show("Đã thêm thành công");

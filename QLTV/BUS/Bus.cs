@@ -71,11 +71,10 @@ namespace BUS
                            NgonNgu = u.NgonNgu,
                            LinhVuc = u.LinhVuc,
                            NamXB = u.NamXB,
-                           ViTri = u.MaVT,
                        }; ;
             return sach;
         }
-        public object addChiTietSach(string ms, string ts, string tg, string tl, string nxb, string nn, string lv, int namxb, string vitri)
+        public object addChiTietSach(string ms, string ts, string tg, string tl, string nxb, string nn, string lv, int namxb)
         {
             ChiTietSach chitietsach = new ChiTietSach();
             //ViTriSach vt = data.ViTriSaches.Single(a => a.MaVT == vitri);
@@ -87,11 +86,6 @@ namespace BUS
             chitietsach.NgonNgu = nn;
             chitietsach.LinhVuc = lv;
             chitietsach.NamXB = namxb;
-            chitietsach.MaVT = vitri;
-            /*if(vt!= null)
-            {
-                chitietsach.MaVT = vitri;
-            }*/
             data.ChiTietSaches.InsertOnSubmit(chitietsach);
             data.SubmitChanges();
 

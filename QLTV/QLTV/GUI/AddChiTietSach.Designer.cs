@@ -37,7 +37,6 @@
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
-            this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.btnThem1 = new DevComponents.DotNetBar.ButtonX();
             this.txtMaSach1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTenSach1 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -47,9 +46,9 @@
             this.txtNgonNgu1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtLinhVuc1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNamXB1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtMaVT1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dataGridViewX2 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,19 +117,11 @@
             this.labelX17.TabIndex = 7;
             this.labelX17.Text = "Năm XB";
             // 
-            // labelX18
-            // 
-            this.labelX18.Location = new System.Drawing.Point(13, 251);
-            this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(75, 23);
-            this.labelX18.TabIndex = 8;
-            this.labelX18.Text = "Mã VT";
-            // 
             // btnThem1
             // 
             this.btnThem1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnThem1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThem1.Location = new System.Drawing.Point(68, 280);
+            this.btnThem1.Location = new System.Drawing.Point(66, 264);
             this.btnThem1.Name = "btnThem1";
             this.btnThem1.Size = new System.Drawing.Size(75, 23);
             this.btnThem1.TabIndex = 9;
@@ -225,21 +216,11 @@
             this.txtNamXB1.Size = new System.Drawing.Size(127, 20);
             this.txtNamXB1.TabIndex = 17;
             // 
-            // txtMaVT1
-            // 
-            // 
-            // 
-            // 
-            this.txtMaVT1.Border.Class = "TextBoxBorder";
-            this.txtMaVT1.Location = new System.Drawing.Point(94, 253);
-            this.txtMaVT1.Name = "txtMaVT1";
-            this.txtMaVT1.Size = new System.Drawing.Size(128, 20);
-            this.txtMaVT1.TabIndex = 18;
-            // 
             // groupPanel2
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.btnThem1);
             this.groupPanel2.Location = new System.Drawing.Point(3, -6);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(225, 309);
@@ -286,7 +267,6 @@
             // 
             this.ClientSize = new System.Drawing.Size(837, 308);
             this.Controls.Add(this.dataGridViewX2);
-            this.Controls.Add(this.txtMaVT1);
             this.Controls.Add(this.txtNamXB1);
             this.Controls.Add(this.txtLinhVuc1);
             this.Controls.Add(this.txtNgonNgu1);
@@ -295,8 +275,6 @@
             this.Controls.Add(this.txtTacGia1);
             this.Controls.Add(this.txtTenSach1);
             this.Controls.Add(this.txtMaSach1);
-            this.Controls.Add(this.btnThem1);
-            this.Controls.Add(this.labelX18);
             this.Controls.Add(this.labelX17);
             this.Controls.Add(this.labelX16);
             this.Controls.Add(this.labelX15);
@@ -307,6 +285,7 @@
             this.Controls.Add(this.labelX10);
             this.Controls.Add(this.groupPanel2);
             this.Name = "AddChiTietSach";
+            this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX2)).EndInit();
             this.ResumeLayout(false);
 
@@ -343,7 +322,6 @@
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.LabelX labelX16;
         private DevComponents.DotNetBar.LabelX labelX17;
-        private DevComponents.DotNetBar.LabelX labelX18;
         private DevComponents.DotNetBar.ButtonX btnThem1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaSach1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTenSach1;
@@ -353,7 +331,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtNgonNgu1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtLinhVuc1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNamXB1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMaVT1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX2;
     }
