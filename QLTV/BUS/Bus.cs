@@ -440,5 +440,32 @@ namespace BUS
             }
         }
 
+        public int add_PhieuMuon(string mapm, string manv, string masv, string datecraete)
+        {
+            int sopm = (from pm in data.PhieuMuonSaches
+                        where pm.MaPM == mapm
+                        select pm).Count();
+            int sosv = (from pm in data.SinhViens
+                        where pm.MaSV == masv
+                        select pm).Count();
+            int sonv = (from pm in data.NhanViens
+                        where pm.MaNV == manv
+                        select pm).Count();
+            PhieuMuonSach pm1 = new PhieuMuonSach();
+            if (sopm == 0 && sonv != 0 && sosv != 0)
+            {
+                pm1.MaPM = mapm;
+                pm1.MaNV = manv;
+                pm1.MaSV = masv;
+                pm1.TimeCreated = Convert.ToDateTime(datecraete);
+                data.PhieuMuonSaches.InsertOnSubmit(pm1);
+                data.SubmitChanges();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
