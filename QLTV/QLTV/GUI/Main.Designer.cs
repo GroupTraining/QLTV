@@ -57,6 +57,7 @@
             this.buttonX2.Size = new System.Drawing.Size(75, 23);
             this.buttonX2.TabIndex = 1;
             this.buttonX2.Text = "Thêm mới";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // buttonTracuu
             // 
@@ -92,6 +93,7 @@
             this.buttonX4.Size = new System.Drawing.Size(75, 23);
             this.buttonX4.TabIndex = 0;
             this.buttonX4.Text = "Cập nhật";
+            this.buttonX4.Click += new System.EventHandler(this.buttonX4_Click);
             // 
             // Main
             // 

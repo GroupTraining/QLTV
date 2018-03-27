@@ -30,5 +30,19 @@ namespace QLTV.GUI
             GUI.ThongKe tracuu = new GUI.ThongKe();
             tracuu.Show();
         }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.AddChoose them = new GUI.AddChoose();
+            them.Show();
+        }
+
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.EditChoose sua = new GUI.EditChoose();
+            sua.Show();
+        }
     }
 }
