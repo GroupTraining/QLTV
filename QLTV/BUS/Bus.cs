@@ -409,5 +409,36 @@ namespace BUS
             return 1;
         }
 
+        public int add_sinhvien(string masv, string ten, string gt, string ns, string sdt, string lop)
+        {
+            int sosv = (from sv in data.SinhViens
+                        where sv.MaSV == masv
+                        select sv).Count();
+            SinhVien sv1 = new SinhVien();
+            if (sosv == 0)
+            {
+                sv1.MaSV = masv;
+                sv1.TenSV = ten;
+                if (gt == "Nam")
+                {
+                    sv1.GioiTinh = false;
+                }
+                if (gt == "Nữ")
+                {
+                    sv1.GioiTinh = true;
+                }
+                sv1.NgaySinh = Convert.ToDateTime(ns);
+                sv1.SoDT = sdt;
+                sv1.Lop = lop;
+                data.SinhViens.InsertOnSubmit(sv1);
+                data.SubmitChanges();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
     }
 }
