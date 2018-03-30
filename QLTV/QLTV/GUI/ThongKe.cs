@@ -104,6 +104,11 @@ namespace QLTV.GUI
 
         }
 
-
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.Main mainchinh = new GUI.Main();
+            mainchinh.Show();
+        }
     }
 }

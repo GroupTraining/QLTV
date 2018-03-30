@@ -19,7 +19,9 @@ namespace QLTV.GUI
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            GUI.frmAddsv addsv = new GUI.frmAddsv();
+            addsv.Show();
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -41,6 +43,13 @@ namespace QLTV.GUI
             this.Hide();
             GUI.Main home = new GUI.Main();
             home.Show();
+        }
+
+        private void buttonX3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GUI.frmAddpm addpm = new GUI.frmAddpm();
+            addpm.Show();
         }
     }
 }
