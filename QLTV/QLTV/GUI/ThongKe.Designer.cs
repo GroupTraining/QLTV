@@ -34,6 +34,7 @@
             this.btnThongKe = new DevComponents.DotNetBar.ButtonX();
             this.comboBoxChiTiet = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboBoxDeMuc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,11 +101,23 @@
             this.comboBoxDeMuc.TabIndex = 8;
             this.comboBoxDeMuc.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeMuc_SelectedIndexChanged);
             // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(568, 72);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(76, 23);
+            this.buttonX1.TabIndex = 9;
+            this.buttonX1.Text = "Back";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 325);
+            this.Controls.Add(this.buttonX1);
             this.Controls.Add(this.comboBoxDeMuc);
             this.Controls.Add(this.comboBoxChiTiet);
             this.Controls.Add(this.btnThongKe);
@@ -125,5 +138,6 @@
         private DevComponents.DotNetBar.ButtonX btnThongKe;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxChiTiet;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxDeMuc;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
     }
 }
