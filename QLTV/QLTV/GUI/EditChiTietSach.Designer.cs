@@ -36,7 +36,6 @@
             this.lbNgonNgu = new System.Windows.Forms.Label();
             this.lbLinhVuc = new System.Windows.Forms.Label();
             this.lbNamXB = new System.Windows.Forms.Label();
-            this.lbMaVT = new System.Windows.Forms.Label();
             this.txtMaSach = new System.Windows.Forms.TextBox();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.txtTacGia = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@
             this.txtNgonNgu = new System.Windows.Forms.TextBox();
             this.txtLinhVuc = new System.Windows.Forms.TextBox();
             this.txtNamXB = new System.Windows.Forms.TextBox();
-            this.txtMaVT = new System.Windows.Forms.TextBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dgvChiTietSach = new System.Windows.Forms.DataGridView();
@@ -127,16 +125,6 @@
             this.lbNamXB.Text = "NĂM XUẤT BẢN";
             this.lbNamXB.Click += new System.EventHandler(this.label8_Click);
             // 
-            // lbMaVT
-            // 
-            this.lbMaVT.AutoSize = true;
-            this.lbMaVT.Location = new System.Drawing.Point(643, 189);
-            this.lbMaVT.Name = "lbMaVT";
-            this.lbMaVT.Size = new System.Drawing.Size(57, 13);
-            this.lbMaVT.TabIndex = 8;
-            this.lbMaVT.Text = "MÃ VỊ TRÍ";
-            this.lbMaVT.Click += new System.EventHandler(this.label9_Click);
-            // 
             // txtMaSach
             // 
             this.txtMaSach.Location = new System.Drawing.Point(121, 40);
@@ -193,13 +181,6 @@
             this.txtNamXB.Size = new System.Drawing.Size(178, 20);
             this.txtNamXB.TabIndex = 16;
             // 
-            // txtMaVT
-            // 
-            this.txtMaVT.Location = new System.Drawing.Point(725, 186);
-            this.txtMaVT.Name = "txtMaVT";
-            this.txtMaVT.Size = new System.Drawing.Size(178, 20);
-            this.txtMaVT.TabIndex = 17;
-            // 
             // btnCapNhat
             // 
             this.btnCapNhat.Location = new System.Drawing.Point(356, 259);
@@ -237,7 +218,6 @@
             this.Controls.Add(this.dgvChiTietSach);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnCapNhat);
-            this.Controls.Add(this.txtMaVT);
             this.Controls.Add(this.txtNamXB);
             this.Controls.Add(this.txtLinhVuc);
             this.Controls.Add(this.txtNgonNgu);
@@ -246,7 +226,6 @@
             this.Controls.Add(this.txtTacGia);
             this.Controls.Add(this.txtTenSach);
             this.Controls.Add(this.txtMaSach);
-            this.Controls.Add(this.lbMaVT);
             this.Controls.Add(this.lbNamXB);
             this.Controls.Add(this.lbLinhVuc);
             this.Controls.Add(this.lbNgonNgu);
@@ -274,7 +253,6 @@
         private System.Windows.Forms.Label lbNgonNgu;
         private System.Windows.Forms.Label lbLinhVuc;
         private System.Windows.Forms.Label lbNamXB;
-        private System.Windows.Forms.Label lbMaVT;
         private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.TextBox txtTenSach;
         private System.Windows.Forms.TextBox txtTacGia;
@@ -283,7 +261,6 @@
         private System.Windows.Forms.TextBox txtNgonNgu;
         private System.Windows.Forms.TextBox txtLinhVuc;
         private System.Windows.Forms.TextBox txtNamXB;
-        private System.Windows.Forms.TextBox txtMaVT;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridView dgvChiTietSach;

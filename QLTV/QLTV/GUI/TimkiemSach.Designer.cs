@@ -30,12 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.buttonHome = new DevComponents.DotNetBar.ButtonX();
             this.buttonBack = new DevComponents.DotNetBar.ButtonX();
             this.buttonSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.textGiatri = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dataGridViewSach = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.buttonHome = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSach)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,18 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
             this.groupPanel1.Text = "Tra cứu Sách";
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonHome.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonHome.Location = new System.Drawing.Point(764, 30);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(72, 21);
+            this.buttonHome.TabIndex = 10;
+            this.buttonHome.Text = "Back";
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // buttonBack
             // 
@@ -137,18 +149,7 @@
             this.dataGridViewSach.Name = "dataGridViewSach";
             this.dataGridViewSach.Size = new System.Drawing.Size(857, 214);
             this.dataGridViewSach.TabIndex = 1;
-            // 
-            // buttonHome
-            // 
-            this.buttonHome.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonHome.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonHome.Location = new System.Drawing.Point(764, 30);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(72, 21);
-            this.buttonHome.TabIndex = 10;
-            this.buttonHome.Text = "Back";
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            this.dataGridViewSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSach_CellContentClick);
             // 
             // TimkiemSach
             // 

@@ -56,7 +56,7 @@ namespace QLTV.GUI
             if (MessageBox.Show("Bạn có muốn sửa  thông tin Chi tiết sách này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
-               bus.Update_CTS(txtMaSach.Text, txtTenSach.Text,txtTacGia.Text,txtTheLoai.Text,txtNhaXB.Text,txtNgonNgu.Text,txtLinhVuc.Text,txtNamXB.Text,txtMaVT.Text);
+               bus.Update_CTS(txtMaSach.Text, txtTenSach.Text,txtTacGia.Text,txtTheLoai.Text,txtNhaXB.Text,txtNgonNgu.Text,txtLinhVuc.Text,txtNamXB.Text);
                 MessageBox.Show("Chỉnh sửa thành công!!");
                 txtMaSach.Text = "";
                 txtTenSach.Text = "";
@@ -66,7 +66,6 @@ namespace QLTV.GUI
                 txtNgonNgu.Text = "";
                 txtLinhVuc.Text = "";
                 txtNamXB.Text = "";
-                txtMaVT.Text = "";
                 dgvChiTietSach.Refresh();
                 dgvChiTietSach.DataSource = bus.get_ChiTietSach();
             }
@@ -77,7 +76,7 @@ namespace QLTV.GUI
             if (MessageBox.Show("Bạn có muốn xóa  thông tin Chi Tiết Sách này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
-                bus.del_CTS(txtMaSach.Text,txtMaVT.Text);
+                bus.del_CTS(txtMaSach.Text);
                 MessageBox.Show("Xóa thành công!!");
                 dgvChiTietSach.Refresh();
                 dgvChiTietSach.DataSource = bus.get_ChiTietSach();
@@ -87,7 +86,6 @@ namespace QLTV.GUI
         private void dgvChiTietSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaSach.Enabled = false;
-            txtMaVT.Enabled = false;
             int rowindex = dgvChiTietSach.CurrentCell.RowIndex;
             int columnindex = dgvChiTietSach.CurrentCell.ColumnIndex;
             txtMaSach.Text = dgvChiTietSach.Rows[rowindex].Cells[0].Value.ToString();
@@ -98,7 +96,6 @@ namespace QLTV.GUI
             txtNgonNgu.Text = dgvChiTietSach.Rows[rowindex].Cells[5].Value.ToString();
             txtLinhVuc.Text = dgvChiTietSach.Rows[rowindex].Cells[6].Value.ToString();
             txtNamXB.Text = dgvChiTietSach.Rows[rowindex].Cells[7].Value.ToString();
-            txtMaVT.Text = dgvChiTietSach.Rows[rowindex].Cells[8].Value.ToString();
 
         }
     }

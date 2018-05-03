@@ -41,5 +41,18 @@ namespace QLTV.GUI
             GUI.TracuuChoose tracuu = new GUI.TracuuChoose();
             tracuu.Show();
         }
+
+        private void dataGridViewSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int lastRow = e.RowIndex;
+                DataGridViewRow nRow = dataGridViewSach.Rows[lastRow];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
